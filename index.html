@@ -1,0 +1,1357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aman Ulla</title>
+  <meta name="description" content="Portfolio of Aman Ulla — Senior ML Engineer & AI Architect with 5.5+ years building scalable AI solutions." />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <!-- Phosphor Icons -->
+  <script src="https://unpkg.com/@phosphor-icons/web@2.0.3"></script>
+
+  <!-- GSAP + Plugins -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+  <!-- Locomotive Scroll -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ═══════════════════════════ PRELOADER ═══════════════════════════ -->
+  <div class="preloader" id="preloader">
+    <div class="preloader__inner">
+      <div class="preloader__logo">
+        <span class="preloader__letter" data-letter="A">A</span>
+        <span class="preloader__letter" data-letter="U">U</span>
+      </div>
+      <div class="preloader__tagline">Senior ML Engineer &bull; AI Architect</div>
+      <div class="preloader__bar-wrap">
+        <div class="preloader__bar" id="progressBar"></div>
+      </div>
+      <div class="preloader__percent" id="progressPercent">0%</div>
+    </div>
+    <!-- Floating orbs in preloader -->
+    <div class="preloader__orb preloader__orb--1"></div>
+    <div class="preloader__orb preloader__orb--2"></div>
+    <div class="preloader__orb preloader__orb--3"></div>
+  </div>
+
+  <!-- ═══════════════════════════ MAIN CONTENT ═══════════════════════════ -->
+  <div class="main-content" id="mainContent" data-scroll-container>
+
+    <!-- ───────── NAVIGATION ───────── -->
+    <nav class="nav" id="navbar">
+      <a href="#hero" class="nav__logo" data-scroll-to>
+        <span class="nav__logo-text">AU</span>
+        <span class="nav__logo-dot"></span>
+      </a>
+      <ul class="nav__links" id="navLinks">
+        <li><a href="#about" class="nav__link" data-scroll-to>About</a></li>
+        <li><a href="#experience" class="nav__link" data-scroll-to>Experience</a></li>
+        <li><a href="#achievements" class="nav__link" data-scroll-to>Achievements</a></li>
+        <li><a href="#testimonials" class="nav__link" data-scroll-to>Recommendations</a></li>
+        <li><a href="#skills" class="nav__link" data-scroll-to>Skills</a></li>
+        <li><a href="#projects" class="nav__link" data-scroll-to>Projects</a></li>
+        <li><a href="#certifications" class="nav__link" data-scroll-to>Credentials</a></li>
+        <li><a href="#contact" class="nav__link" data-scroll-to>Contact</a></li>
+      </ul>
+      <div class="nav__socials">
+        <a href="https://www.linkedin.com/in/connectaman/" target="_blank" rel="noopener" aria-label="LinkedIn" class="nav-social nav-social--linkedin"><i class="ph-light ph-linkedin-logo"></i></a>
+        <a href="https://twitter.com/" target="_blank" rel="noopener" aria-label="Twitter" class="nav-social nav-social--twitter"><i class="ph-light ph-twitter-logo"></i></a>
+        <a href="https://www.instagram.com/its.amanulla/" target="_blank" rel="noopener" aria-label="Instagram" class="nav-social nav-social--instagram"><i class="ph-light ph-instagram-logo"></i></a>
+        <a href="https://github.com/connectaman" target="_blank" rel="noopener" aria-label="GitHub" class="nav-social nav-social--github"><i class="ph-light ph-github-logo"></i></a>
+        <a href="https://huggingface.co/connectaman" target="_blank" rel="noopener" aria-label="HuggingFace" class="nav-social nav-social--huggingface"><svg class="nav-svg-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168C3.151 17.544 3 18 3 18.5c0 .828.672 1.5 1.5 1.5.357 0 .684-.125.94-.333A9.96 9.96 0 0012 22a9.96 9.96 0 006.56-2.333c.256.208.583.333.94.333.828 0 1.5-.672 1.5-1.5 0-.5-.151-.956-.438-1.332A9.936 9.936 0 0022 12c0-5.523-4.477-10-10-10zM8.5 9a1.5 1.5 0 110 3 1.5 1.5 0 010-3zm7 0a1.5 1.5 0 110 3 1.5 1.5 0 010-3zM7.5 15h9s-.5 3-4.5 3-4.5-3-4.5-3z"/></svg></a>
+        <a href="https://hashnode.com/@connectaman" target="_blank" rel="noopener" aria-label="Hashnode" class="nav-social nav-social--hashnode"><svg class="nav-svg-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M3.29 7.66l5.37-5.37a3.36 3.36 0 014.74 0l5.37 5.37a3.36 3.36 0 010 4.74l-5.37 5.37a3.36 3.36 0 01-4.74 0L3.29 12.4a3.36 3.36 0 010-4.74zm7.18 7.18a2.13 2.13 0 100-4.26 2.13 2.13 0 000 4.26z"/></svg></a>
+        <a href="https://arxiv.org/search/?query=Ulla%2C+Aman&searchtype=author&abstracts=show&order=-announced_date_first&size=50" target="_blank" rel="noopener" aria-label="arXiv" class="nav-social nav-social--arxiv"><svg class="nav-svg-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M4 4h6v6H4V4zm10 0h6v6h-6V4zM4 14h6v6H4v-6zm10 0h6v6h-6v-6z"/></svg></a>
+      </div>
+      <button class="nav__hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+
+    <!-- Mobile Nav Tray -->
+    <div class="mobile-tray" id="mobileTray">
+      <ul class="mobile-tray__links">
+        <li><a href="#about" class="mobile-tray__link" data-scroll-to>About</a></li>
+        <li><a href="#experience" class="mobile-tray__link" data-scroll-to>Experience</a></li>
+        <li><a href="#achievements" class="mobile-tray__link" data-scroll-to>Achievements</a></li>
+        <li><a href="#testimonials" class="mobile-tray__link" data-scroll-to>Recommendations</a></li>
+        <li><a href="#skills" class="mobile-tray__link" data-scroll-to>Skills</a></li>
+        <li><a href="#projects" class="mobile-tray__link" data-scroll-to>Projects</a></li>
+        <li><a href="#certifications" class="mobile-tray__link" data-scroll-to>Credentials</a></li>
+        <li><a href="#contact" class="mobile-tray__link" data-scroll-to>Contact</a></li>
+      </ul>
+      <div class="mobile-tray__socials">
+        <a href="https://twitter.com/" target="_blank" rel="noopener" aria-label="Twitter"><i class="ph-light ph-twitter-logo"></i></a>
+        <a href="https://www.instagram.com/its.amanulla/" target="_blank" rel="noopener" aria-label="Instagram"><i class="ph-light ph-instagram-logo"></i></a>
+      </div>
+    </div>
+
+    <!-- ───────── HERO SECTION ───────── -->
+    <section class="hero" id="hero" data-scroll-section>
+      <div class="hero__bg-orbs">
+        <div class="glow-orb glow-orb--1"></div>
+        <div class="glow-orb glow-orb--2"></div>
+        <div class="glow-orb glow-orb--3"></div>
+        <div class="glow-orb glow-orb--4"></div>
+        <div class="glow-orb glow-orb--5"></div>
+      </div>
+
+      <div class="hero__content">
+        <p class="hero__greeting">Hello, I'm</p>
+        <h1 class="hero__name">Aman Ulla</h1>
+        <h2 class="hero__title">Senior ML Engineer <span class="hero__sep">&amp;</span> AI Architect</h2>
+        <p class="hero__subtitle">
+          <span class="hero__keyword">LLMOps</span>
+          <span class="hero__dot"></span>
+          <span class="hero__keyword">MLOps</span>
+          <span class="hero__dot"></span>
+          <span class="hero__keyword">GenAI</span>
+          <span class="hero__dot"></span>
+          <span class="hero__keyword">AI Architect</span>
+          <span class="hero__dot"></span>
+          <span class="hero__keyword">Enterprise AI</span>
+        </p>
+        <p class="hero__tagline-sub">Building production-grade intelligent systems at scale — from research to deployment.</p>
+        <div class="hero__cta-group">
+          <a href="#contact" class="btn btn--primary hero__cta" data-scroll-to>
+            <i class="ph-light ph-envelope-simple"></i> Hire Me
+          </a>
+          <a href="#projects" class="btn btn--ghost hero__cta" data-scroll-to>
+            <i class="ph-light ph-code"></i> View Work
+          </a>
+        </div>
+      </div>
+
+      <div class="hero__3d" id="hero3d">
+        <div class="hero__illustration">
+          <!-- 3D Animated AI Architecture Pipeline -->
+          <svg class="hero__illo-svg" viewBox="0 0 720 620" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="g-blue" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#4D7CFF" stop-opacity="0.9"/><stop offset="100%" stop-color="#3B5FCF" stop-opacity="0.7"/></linearGradient>
+              <linearGradient id="g-violet" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#7C3AED" stop-opacity="0.9"/><stop offset="100%" stop-color="#6025C0" stop-opacity="0.7"/></linearGradient>
+              <linearGradient id="g-cyan" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#06D6A0" stop-opacity="0.9"/><stop offset="100%" stop-color="#04B080" stop-opacity="0.7"/></linearGradient>
+              <linearGradient id="g-pink" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#EC4899" stop-opacity="0.9"/><stop offset="100%" stop-color="#C03070" stop-opacity="0.7"/></linearGradient>
+              <linearGradient id="g-neon" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#00F0FF" stop-opacity="0.9"/><stop offset="100%" stop-color="#00C0D0" stop-opacity="0.7"/></linearGradient>
+              <linearGradient id="g-orange" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#F59E0B" stop-opacity="0.9"/><stop offset="100%" stop-color="#D08000" stop-opacity="0.7"/></linearGradient>
+              <linearGradient id="g-green" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#10B981" stop-opacity="0.9"/><stop offset="100%" stop-color="#059669" stop-opacity="0.7"/></linearGradient>
+              <linearGradient id="g-red" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#EF4444" stop-opacity="0.9"/><stop offset="100%" stop-color="#DC2626" stop-opacity="0.7"/></linearGradient>
+              <linearGradient id="g-sky" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#38BDF8" stop-opacity="0.9"/><stop offset="100%" stop-color="#0EA5E9" stop-opacity="0.7"/></linearGradient>
+              <filter id="node-glow"><feGaussianBlur stdDeviation="6" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+              <filter id="line-glow"><feGaussianBlur stdDeviation="3"/></filter>
+              <!-- Data pulse marker -->
+              <circle id="pulse-dot" r="3.5" fill="#fff" opacity="0.9"/>
+            </defs>
+
+            <!-- ═══ AMBIENT GLOW ═══ -->
+            <ellipse cx="360" cy="560" rx="280" ry="28" fill="rgba(77,124,255,0.06)" opacity="0.5">
+              <animate attributeName="rx" values="280;300;280" dur="4s" repeatCount="indefinite"/>
+            </ellipse>
+
+            <!-- ═══ ISOMETRIC GRID FLOOR ═══ -->
+            <g opacity="0.06" stroke="rgba(77,124,255,0.5)" stroke-width="0.5">
+              <line x1="100" y1="480" x2="620" y2="480"/><line x1="120" y1="500" x2="640" y2="500"/><line x1="140" y1="520" x2="660" y2="520"/>
+              <line x1="200" y1="440" x2="200" y2="540"/><line x1="300" y1="440" x2="300" y2="540"/><line x1="400" y1="440" x2="400" y2="540"/><line x1="500" y1="440" x2="500" y2="540"/><line x1="600" y1="440" x2="600" y2="540"/>
+            </g>
+
+            <!-- ══════════════════════════════════════════
+                 PIPELINE CONNECTIONS (Flowing Lines)
+                 ══════════════════════════════════════════ -->
+            <!-- DB → Microservice -->
+            <path d="M145 280 C200 280 200 200 260 200" fill="none" stroke="rgba(77,124,255,0.15)" stroke-width="2" stroke-dasharray="6 4">
+              <animate attributeName="stroke-dashoffset" values="0;-20" dur="2s" repeatCount="indefinite"/>
+            </path>
+            <path d="M145 280 C200 280 200 200 260 200" fill="none" stroke="rgba(77,124,255,0.06)" stroke-width="6" filter="url(#line-glow)"/>
+            <!-- Microservice → CI/CD -->
+            <path d="M340 200 C355 155 370 115 382 106" fill="none" stroke="rgba(56,189,248,0.15)" stroke-width="2" stroke-dasharray="6 4">
+              <animate attributeName="stroke-dashoffset" values="0;-20" dur="1.8s" repeatCount="indefinite"/>
+            </path>
+            <path d="M340 200 C355 155 370 115 382 106" fill="none" stroke="rgba(56,189,248,0.06)" stroke-width="6" filter="url(#line-glow)"/>
+            <!-- CI/CD → K8s -->
+            <path d="M400 94 C418 108 438 122 442 130" fill="none" stroke="rgba(56,189,248,0.15)" stroke-width="2" stroke-dasharray="6 4">
+              <animate attributeName="stroke-dashoffset" values="0;-20" dur="2s" repeatCount="indefinite"/>
+            </path>
+            <path d="M400 94 C418 108 438 122 442 130" fill="none" stroke="rgba(56,189,248,0.06)" stroke-width="6" filter="url(#line-glow)"/>
+            <!-- K8s → Knowledge Graph -->
+            <path d="M500 140 C530 140 540 220 570 220" fill="none" stroke="rgba(16,185,129,0.15)" stroke-width="2" stroke-dasharray="6 4">
+              <animate attributeName="stroke-dashoffset" values="0;-20" dur="2.2s" repeatCount="indefinite"/>
+            </path>
+            <!-- Knowledge Graph → ML -->
+            <path d="M640 220 C660 220 660 320 630 340" fill="none" stroke="rgba(6,214,160,0.15)" stroke-width="2" stroke-dasharray="6 4">
+              <animate attributeName="stroke-dashoffset" values="0;-20" dur="1.6s" repeatCount="indefinite"/>
+            </path>
+            <!-- ML → LLM -->
+            <path d="M570 370 C520 400 480 400 440 380" fill="none" stroke="rgba(0,240,255,0.15)" stroke-width="2" stroke-dasharray="6 4">
+              <animate attributeName="stroke-dashoffset" values="0;-20" dur="2s" repeatCount="indefinite"/>
+            </path>
+            <!-- LLM → VectorDB -->
+            <path d="M380 400 C340 420 300 440 260 430" fill="none" stroke="rgba(245,158,11,0.15)" stroke-width="2" stroke-dasharray="6 4">
+              <animate attributeName="stroke-dashoffset" values="0;-20" dur="1.9s" repeatCount="indefinite"/>
+            </path>
+            <!-- VectorDB → Agents -->
+            <path d="M200 460 C170 470 150 490 130 480" fill="none" stroke="rgba(236,72,153,0.15)" stroke-width="2" stroke-dasharray="6 4">
+              <animate attributeName="stroke-dashoffset" values="0;-20" dur="2.1s" repeatCount="indefinite"/>
+            </path>
+            <!-- Agents feedback → DB -->
+            <path d="M100 500 C60 480 50 380 80 310" fill="none" stroke="rgba(16,185,129,0.1)" stroke-width="1.5" stroke-dasharray="4 6">
+              <animate attributeName="stroke-dashoffset" values="0;-20" dur="3s" repeatCount="indefinite"/>
+            </path>
+
+            <!-- ══════════════════════════════════════════
+                 DATA PULSE PARTICLES on paths
+                 ══════════════════════════════════════════ -->
+            <circle r="3" fill="#4D7CFF" opacity="0.8">
+              <animateMotion dur="2.5s" repeatCount="indefinite" path="M145 280 C200 280 200 200 260 200"/>
+            </circle>
+            <circle r="2.5" fill="#38BDF8" opacity="0.7">
+              <animateMotion dur="2s" repeatCount="indefinite" path="M340 200 C355 155 370 115 382 106"/>
+            </circle>
+            <circle r="2.5" fill="#38BDF8" opacity="0.6">
+              <animateMotion dur="1.8s" repeatCount="indefinite" path="M400 94 C418 108 438 122 442 130"/>
+            </circle>
+            <circle r="3" fill="#10B981" opacity="0.6">
+              <animateMotion dur="2.8s" repeatCount="indefinite" path="M500 140 C530 140 540 220 570 220"/>
+            </circle>
+            <circle r="2.5" fill="#06D6A0" opacity="0.7">
+              <animateMotion dur="2s" repeatCount="indefinite" path="M640 220 C660 220 660 320 630 340"/>
+            </circle>
+            <circle r="3" fill="#00F0FF" opacity="0.7">
+              <animateMotion dur="2.4s" repeatCount="indefinite" path="M570 370 C520 400 480 400 440 380"/>
+            </circle>
+            <circle r="2.5" fill="#F59E0B" opacity="0.6">
+              <animateMotion dur="2.6s" repeatCount="indefinite" path="M380 400 C340 420 300 440 260 430"/>
+            </circle>
+            <circle r="2" fill="#EC4899" opacity="0.6">
+              <animateMotion dur="2.3s" repeatCount="indefinite" path="M200 460 C170 470 150 490 130 480"/>
+            </circle>
+            <circle r="2" fill="#10B981" opacity="0.4">
+              <animateMotion dur="3.5s" repeatCount="indefinite" path="M100 500 C60 480 50 380 80 310"/>
+            </circle>
+
+            <!-- ══════════════════════════════════════════
+                 NODE 1: DATABASE (Isometric cylinder)
+                 ══════════════════════════════════════════ -->
+            <g filter="url(#node-glow)" class="pipeline-node">
+              <g>
+                <animateTransform attributeName="transform" type="translate" values="0,0;0,-4;0,0" dur="3s" repeatCount="indefinite"/>
+              </g>
+              <!-- Cylinder body -->
+              <rect x="85" y="260" width="60" height="40" rx="2" fill="rgba(77,124,255,0.12)" stroke="rgba(77,124,255,0.3)" stroke-width="1.5"/>
+              <!-- Top ellipse -->
+              <ellipse cx="115" cy="260" rx="30" ry="10" fill="rgba(77,124,255,0.2)" stroke="rgba(77,124,255,0.4)" stroke-width="1.5"/>
+              <!-- Bottom ellipse -->
+              <ellipse cx="115" cy="300" rx="30" ry="10" fill="rgba(77,124,255,0.08)" stroke="rgba(77,124,255,0.2)" stroke-width="1"/>
+              <!-- Data rows -->
+              <line x1="95" y1="272" x2="135" y2="272" stroke="rgba(77,124,255,0.25)" stroke-width="1"/>
+              <line x1="95" y1="280" x2="135" y2="280" stroke="rgba(77,124,255,0.18)" stroke-width="1"/>
+              <line x1="95" y1="288" x2="135" y2="288" stroke="rgba(77,124,255,0.12)" stroke-width="1"/>
+              <!-- Icon: DB -->
+              <text x="115" y="318" text-anchor="middle" fill="#4D7CFF" font-size="9" font-family="Inter,sans-serif" font-weight="600" opacity="0.8">DATABASE</text>
+            </g>
+
+            <!-- ══════════════════════════════════════════
+                 NODE 2: MICROSERVICE (Cube / Hex)
+                 ══════════════════════════════════════════ -->
+            <g filter="url(#node-glow)" class="pipeline-node">
+              <!-- Isometric cube -->
+              <path d="M300 170 L340 190 L340 220 L300 240 L260 220 L260 190 Z" fill="rgba(124,58,237,0.12)" stroke="rgba(124,58,237,0.35)" stroke-width="1.5" stroke-linejoin="round"/>
+              <path d="M300 170 L340 190 L300 210 L260 190 Z" fill="rgba(124,58,237,0.2)" stroke="rgba(124,58,237,0.3)" stroke-width="1"/>
+              <path d="M300 210 L340 190 L340 220 L300 240 Z" fill="rgba(124,58,237,0.08)"/>
+              <path d="M300 210 L260 190 L260 220 L300 240 Z" fill="rgba(124,58,237,0.15)"/>
+              <!-- API dots -->
+              <circle cx="290" cy="200" r="2.5" fill="#7C3AED" opacity="0.6">
+                <animate attributeName="opacity" values="0.6;1;0.6" dur="2s" repeatCount="indefinite"/>
+              </circle>
+              <circle cx="300" cy="195" r="2" fill="#7C3AED" opacity="0.4"/>
+              <circle cx="310" cy="200" r="2.5" fill="#7C3AED" opacity="0.5">
+                <animate attributeName="opacity" values="0.5;0.9;0.5" dur="2.5s" repeatCount="indefinite"/>
+              </circle>
+              <text x="300" y="258" text-anchor="middle" fill="#7C3AED" font-size="9" font-family="Inter,sans-serif" font-weight="600" opacity="0.8">MICROSERVICE</text>
+            </g>
+
+            <!-- ══════════════════════════════════════════
+                 NODE 3: KUBERNETES (Helm wheel)
+                 ══════════════════════════════════════════ -->
+            <g filter="url(#node-glow)" class="pipeline-node">
+              <!-- K8s wheel -->
+              <circle cx="460" cy="130" r="28" fill="rgba(77,124,255,0.06)" stroke="rgba(77,124,255,0.3)" stroke-width="1.5"/>
+              <circle cx="460" cy="130" r="14" fill="rgba(77,124,255,0.15)" stroke="rgba(77,124,255,0.25)" stroke-width="1"/>
+              <!-- Spokes (7 arms like K8s logo) -->
+              <g stroke="rgba(77,124,255,0.35)" stroke-width="1.5" stroke-linecap="round">
+                <line x1="460" y1="102" x2="460" y2="116"/><line x1="486" y1="116" x2="474" y2="122"/>
+                <line x1="486" y1="144" x2="474" y2="138"/><line x1="460" y1="158" x2="460" y2="144"/>
+                <line x1="434" y1="144" x2="446" y2="138"/><line x1="434" y1="116" x2="446" y2="122"/>
+              </g>
+              <!-- Center dot -->
+              <circle cx="460" cy="130" r="4" fill="#4D7CFF" opacity="0.7">
+                <animate attributeName="r" values="4;5;4" dur="2s" repeatCount="indefinite"/>
+              </circle>
+              <!-- Rotating ring -->
+              <circle cx="460" cy="130" r="34" fill="none" stroke="rgba(77,124,255,0.1)" stroke-width="1" stroke-dasharray="4 8">
+                <animateTransform attributeName="transform" type="rotate" values="0 460 130;360 460 130" dur="12s" repeatCount="indefinite"/>
+              </circle>
+              <text x="460" y="175" text-anchor="middle" fill="#4D7CFF" font-size="9" font-family="Inter,sans-serif" font-weight="600" opacity="0.8">KUBERNETES</text>
+            </g>
+
+            <!-- ══════════════════════════════════════════
+                 NODE: CI/CD (Continuous deploy cycle)
+                 ══════════════════════════════════════════ -->
+            <g filter="url(#node-glow)" class="pipeline-node">
+              <!-- Outer container -->
+              <circle cx="385" cy="82" r="26" fill="rgba(56,189,248,0.06)" stroke="rgba(56,189,248,0.25)" stroke-width="1.5"/>
+              <!-- Rotating deploy arrows -->
+              <g>
+                <animateTransform attributeName="transform" type="rotate" values="0 385 82;360 385 82" dur="6s" repeatCount="indefinite"/>
+                <!-- Arrow arc 1 -->
+                <path d="M385 58 A24 24 0 0 1 409 82" fill="none" stroke="rgba(56,189,248,0.45)" stroke-width="2" stroke-linecap="round"/>
+                <polygon points="409,78 409,86 403,82" fill="#38BDF8" opacity="0.6"/>
+                <!-- Arrow arc 2 -->
+                <path d="M385 106 A24 24 0 0 1 361 82" fill="none" stroke="rgba(56,189,248,0.45)" stroke-width="2" stroke-linecap="round"/>
+                <polygon points="361,78 361,86 367,82" fill="#38BDF8" opacity="0.6"/>
+              </g>
+              <!-- Center gear -->
+              <circle cx="385" cy="82" r="9" fill="rgba(56,189,248,0.15)" stroke="rgba(56,189,248,0.35)" stroke-width="1"/>
+              <circle cx="385" cy="82" r="3.5" fill="#38BDF8" opacity="0.6">
+                <animate attributeName="r" values="3.5;4.5;3.5" dur="2s" repeatCount="indefinite"/>
+              </circle>
+              <!-- Gear teeth -->
+              <g stroke="rgba(56,189,248,0.4)" stroke-width="1.5" stroke-linecap="round">
+                <line x1="385" y1="70" x2="385" y2="73"/>
+                <line x1="385" y1="91" x2="385" y2="94"/>
+                <line x1="373" y1="82" x2="376" y2="82"/>
+                <line x1="394" y1="82" x2="397" y2="82"/>
+                <line x1="377" y1="74" x2="379" y2="76"/>
+                <line x1="391" y1="88" x2="393" y2="90"/>
+                <line x1="377" y1="90" x2="379" y2="88"/>
+                <line x1="391" y1="76" x2="393" y2="74"/>
+              </g>
+              <!-- Pulsing outer ring -->
+              <circle cx="385" cy="82" r="32" fill="none" stroke="rgba(56,189,248,0.08)" stroke-width="0.8" stroke-dasharray="4 8">
+                <animateTransform attributeName="transform" type="rotate" values="360 385 82;0 385 82" dur="10s" repeatCount="indefinite"/>
+              </circle>
+              <text x="385" y="124" text-anchor="middle" fill="#38BDF8" font-size="9" font-family="Inter,sans-serif" font-weight="600" opacity="0.8">CI / CD</text>
+            </g>
+
+            <!-- ══════════════════════════════════════════
+                 NODE 4: KNOWLEDGE GRAPH (Graph network)
+                 ══════════════════════════════════════════ -->
+            <g filter="url(#node-glow)" class="pipeline-node">
+              <!-- Graph container -->
+              <circle cx="615" cy="220" r="30" fill="rgba(16,185,129,0.06)" stroke="rgba(16,185,129,0.25)" stroke-width="1.5"/>
+              <!-- Graph nodes -->
+              <circle cx="605" cy="208" r="4" fill="rgba(16,185,129,0.3)" stroke="rgba(16,185,129,0.5)" stroke-width="1">
+                <animate attributeName="r" values="4;5;4" dur="2.5s" repeatCount="indefinite"/>
+              </circle>
+              <circle cx="625" cy="212" r="3.5" fill="rgba(16,185,129,0.25)" stroke="rgba(16,185,129,0.45)" stroke-width="1"/>
+              <circle cx="600" cy="228" r="3" fill="rgba(16,185,129,0.2)" stroke="rgba(16,185,129,0.4)" stroke-width="1">
+                <animate attributeName="r" values="3;4;3" dur="3s" repeatCount="indefinite"/>
+              </circle>
+              <circle cx="620" cy="232" r="4" fill="rgba(16,185,129,0.3)" stroke="rgba(16,185,129,0.5)" stroke-width="1"/>
+              <circle cx="610" cy="218" r="2.5" fill="#10B981" opacity="0.5"/>
+              <!-- Graph edges -->
+              <line x1="605" y1="208" x2="625" y2="212" stroke="#10B981" stroke-width="1" opacity="0.3"/>
+              <line x1="605" y1="208" x2="610" y2="218" stroke="#10B981" stroke-width="1" opacity="0.25"/>
+              <line x1="625" y1="212" x2="620" y2="232" stroke="#10B981" stroke-width="1" opacity="0.3"/>
+              <line x1="610" y1="218" x2="600" y2="228" stroke="#10B981" stroke-width="1" opacity="0.25"/>
+              <line x1="610" y1="218" x2="620" y2="232" stroke="#10B981" stroke-width="1" opacity="0.2"/>
+              <line x1="600" y1="228" x2="620" y2="232" stroke="#10B981" stroke-width="1" opacity="0.2"/>
+              <!-- Orbiting ring -->
+              <circle cx="615" cy="220" r="35" fill="none" stroke="rgba(16,185,129,0.08)" stroke-width="0.8" stroke-dasharray="3 6">
+                <animateTransform attributeName="transform" type="rotate" values="0 615 220;360 615 220" dur="15s" repeatCount="indefinite"/>
+              </circle>
+              <text x="615" y="266" text-anchor="middle" fill="#10B981" font-size="8" font-family="Inter,sans-serif" font-weight="600" opacity="0.8">KNOWLEDGE</text>
+              <text x="615" y="276" text-anchor="middle" fill="#10B981" font-size="8" font-family="Inter,sans-serif" font-weight="600" opacity="0.8">GRAPH</text>
+            </g>
+
+            <!-- ══════════════════════════════════════════
+                 NODE 5: ML MODEL (Brain / network)
+                 ══════════════════════════════════════════ -->
+            <g filter="url(#node-glow)" class="pipeline-node">
+              <!-- Rounded container -->
+              <rect x="570" y="320" width="70" height="50" rx="14" fill="rgba(6,214,160,0.08)" stroke="rgba(6,214,160,0.3)" stroke-width="1.5"/>
+              <!-- Neural nodes -->
+              <circle cx="590" cy="335" r="3" fill="#06D6A0" opacity="0.6"/><circle cx="605" cy="330" r="2.5" fill="#06D6A0" opacity="0.5"/>
+              <circle cx="620" cy="338" r="3" fill="#06D6A0" opacity="0.6"/><circle cx="596" cy="352" r="2.5" fill="#06D6A0" opacity="0.4"/>
+              <circle cx="612" cy="355" r="3" fill="#06D6A0" opacity="0.5"/>
+              <!-- Links -->
+              <line x1="590" y1="335" x2="605" y2="330" stroke="#06D6A0" stroke-width="0.8" opacity="0.3"/>
+              <line x1="605" y1="330" x2="620" y2="338" stroke="#06D6A0" stroke-width="0.8" opacity="0.3"/>
+              <line x1="590" y1="335" x2="596" y2="352" stroke="#06D6A0" stroke-width="0.8" opacity="0.25"/>
+              <line x1="605" y1="330" x2="612" y2="355" stroke="#06D6A0" stroke-width="0.8" opacity="0.25"/>
+              <line x1="620" y1="338" x2="612" y2="355" stroke="#06D6A0" stroke-width="0.8" opacity="0.3"/>
+              <line x1="596" y1="352" x2="612" y2="355" stroke="#06D6A0" stroke-width="0.8" opacity="0.3"/>
+              <!-- Pulse ring -->
+              <rect x="570" y="320" width="70" height="50" rx="14" fill="none" stroke="rgba(6,214,160,0.12)" stroke-width="1">
+                <animate attributeName="stroke-opacity" values="0.12;0.3;0.12" dur="2.5s" repeatCount="indefinite"/>
+              </rect>
+              <text x="605" y="388" text-anchor="middle" fill="#06D6A0" font-size="9" font-family="Inter,sans-serif" font-weight="600" opacity="0.8">ML MODEL</text>
+            </g>
+
+            <!-- ══════════════════════════════════════════
+                 NODE 6: LLM (Stacked layers / transformer)
+                 ══════════════════════════════════════════ -->
+            <g filter="url(#node-glow)" class="pipeline-node">
+              <!-- Stacked rectangles (transformer layers) -->
+              <rect x="375" y="360" width="65" height="12" rx="4" fill="rgba(0,240,255,0.08)" stroke="rgba(0,240,255,0.25)" stroke-width="1">
+                <animate attributeName="fill-opacity" values="0.08;0.15;0.08" dur="3s" repeatCount="indefinite"/>
+              </rect>
+              <rect x="378" y="374" width="59" height="12" rx="4" fill="rgba(0,240,255,0.12)" stroke="rgba(0,240,255,0.3)" stroke-width="1">
+                <animate attributeName="fill-opacity" values="0.12;0.2;0.12" dur="2.5s" repeatCount="indefinite"/>
+              </rect>
+              <rect x="381" y="388" width="53" height="12" rx="4" fill="rgba(0,240,255,0.16)" stroke="rgba(0,240,255,0.35)" stroke-width="1">
+                <animate attributeName="fill-opacity" values="0.16;0.25;0.16" dur="2s" repeatCount="indefinite"/>
+              </rect>
+              <rect x="384" y="402" width="47" height="12" rx="4" fill="rgba(0,240,255,0.2)" stroke="rgba(0,240,255,0.4)" stroke-width="1"/>
+              <!-- Attention lines across layers -->
+              <line x1="390" y1="366" x2="400" y2="374" stroke="#00F0FF" stroke-width="0.6" opacity="0.3"/>
+              <line x1="410" y1="366" x2="420" y2="374" stroke="#00F0FF" stroke-width="0.6" opacity="0.25"/>
+              <line x1="400" y1="386" x2="408" y2="388" stroke="#00F0FF" stroke-width="0.6" opacity="0.2"/>
+              <text x="407" y="430" text-anchor="middle" fill="#00F0FF" font-size="9" font-family="Inter,sans-serif" font-weight="600" opacity="0.8">LLM</text>
+            </g>
+
+            <!-- ══════════════════════════════════════════
+                 NODE 7: VECTOR DATABASE (3D prism)
+                 ══════════════════════════════════════════ -->
+            <g filter="url(#node-glow)" class="pipeline-node">
+              <!-- Isometric prism -->
+              <path d="M230 420 L270 400 L270 450 L230 470 Z" fill="rgba(245,158,11,0.15)" stroke="rgba(245,158,11,0.3)" stroke-width="1.5"/>
+              <path d="M270 400 L290 415 L290 465 L270 450 Z" fill="rgba(245,158,11,0.08)" stroke="rgba(245,158,11,0.2)" stroke-width="1"/>
+              <path d="M230 420 L270 400 L290 415 L250 435 Z" fill="rgba(245,158,11,0.2)" stroke="rgba(245,158,11,0.25)" stroke-width="1"/>
+              <!-- Vector dots inside -->
+              <circle cx="250" cy="435" r="2" fill="#F59E0B" opacity="0.5">
+                <animate attributeName="cy" values="435;430;435" dur="2s" repeatCount="indefinite"/>
+              </circle>
+              <circle cx="260" cy="445" r="1.5" fill="#F59E0B" opacity="0.4">
+                <animate attributeName="cy" values="445;440;445" dur="2.5s" repeatCount="indefinite"/>
+              </circle>
+              <circle cx="270" cy="430" r="2" fill="#F59E0B" opacity="0.5">
+                <animate attributeName="cy" values="430;425;430" dur="1.8s" repeatCount="indefinite"/>
+              </circle>
+              <circle cx="255" cy="450" r="1.5" fill="#F59E0B" opacity="0.3"/>
+              <text x="258" y="485" text-anchor="middle" fill="#F59E0B" font-size="9" font-family="Inter,sans-serif" font-weight="600" opacity="0.8">VECTOR DB</text>
+            </g>
+
+            <!-- ══════════════════════════════════════════
+                 NODE 8: AI AGENTS (Multi-agent circles)
+                 ══════════════════════════════════════════ -->
+            <g filter="url(#node-glow)" class="pipeline-node">
+              <!-- Agent circles - orbiting -->
+              <circle cx="110" cy="480" r="22" fill="rgba(236,72,153,0.06)" stroke="rgba(236,72,153,0.25)" stroke-width="1.5"/>
+              <!-- Orbiting mini-agents -->
+              <circle cx="110" cy="480" r="8" fill="rgba(236,72,153,0.2)" stroke="rgba(236,72,153,0.35)" stroke-width="1">
+                <animate attributeName="r" values="8;10;8" dur="2s" repeatCount="indefinite"/>
+              </circle>
+              <!-- Eye/AI dot -->
+              <circle cx="110" cy="478" r="2" fill="#EC4899" opacity="0.8"/>
+              <path d="M105 482 Q110 485 115 482" fill="none" stroke="#EC4899" stroke-width="1" opacity="0.5"/>
+              <!-- Orbiting satellite agents -->
+              <g>
+                <animateTransform attributeName="transform" type="rotate" values="0 110 480;360 110 480" dur="8s" repeatCount="indefinite"/>
+                <circle cx="136" cy="480" r="4" fill="rgba(236,72,153,0.2)" stroke="rgba(236,72,153,0.4)" stroke-width="1"/>
+                <circle cx="136" cy="480" r="1.5" fill="#EC4899" opacity="0.6"/>
+              </g>
+              <g>
+                <animateTransform attributeName="transform" type="rotate" values="120 110 480;480 110 480" dur="8s" repeatCount="indefinite"/>
+                <circle cx="136" cy="480" r="3.5" fill="rgba(236,72,153,0.15)" stroke="rgba(236,72,153,0.3)" stroke-width="1"/>
+                <circle cx="136" cy="480" r="1.5" fill="#EC4899" opacity="0.5"/>
+              </g>
+              <g>
+                <animateTransform attributeName="transform" type="rotate" values="240 110 480;600 110 480" dur="8s" repeatCount="indefinite"/>
+                <circle cx="136" cy="480" r="3" fill="rgba(236,72,153,0.1)" stroke="rgba(236,72,153,0.25)" stroke-width="1"/>
+                <circle cx="136" cy="480" r="1.5" fill="#EC4899" opacity="0.4"/>
+              </g>
+              <text x="110" y="515" text-anchor="middle" fill="#EC4899" font-size="9" font-family="Inter,sans-serif" font-weight="600" opacity="0.8">AI AGENTS</text>
+            </g>
+
+            <!-- ═══ FLOATING TECH LABELS ═══ -->
+            <g font-family="'Inter',monospace" font-size="8" font-weight="500" opacity="0.2">
+              <text x="50" y="200" fill="#4D7CFF">SQL</text>
+              <text x="500" y="90" fill="#7C3AED">gRPC</text>
+              <text x="670" y="300" fill="#10B981">Graph</text>
+              <text x="480" y="430" fill="#00F0FF">GPT</text>
+              <text x="160" y="400" fill="#F59E0B">Embed</text>
+              <text x="350" y="310" fill="#06D6A0">PyTorch</text>
+              <text x="60" y="430" fill="#EC4899">ReAct</text>
+              <text x="340" y="55" fill="#38BDF8">GitOps</text>
+            </g>
+
+            <!-- ═══ OUTER ORBIT RINGS ═══ -->
+            <ellipse cx="360" cy="340" rx="320" ry="120" fill="none" stroke="rgba(77,124,255,0.04)" stroke-width="0.8" stroke-dasharray="10 16">
+              <animateTransform attributeName="transform" type="rotate" values="0 360 340;360 360 340" dur="40s" repeatCount="indefinite"/>
+            </ellipse>
+            <ellipse cx="360" cy="340" rx="280" ry="100" fill="none" stroke="rgba(124,58,237,0.035)" stroke-width="0.8" stroke-dasharray="8 14">
+              <animateTransform attributeName="transform" type="rotate" values="360 360 340;0 360 340" dur="35s" repeatCount="indefinite"/>
+            </ellipse>
+
+            <!-- ═══ TITLE LABEL ═══ -->
+            <text x="360" y="570" text-anchor="middle" fill="rgba(240,240,255,0.12)" font-size="11" font-family="Inter,sans-serif" font-weight="600" letter-spacing="0.15em">SCALABLE AI PIPELINE</text>
+          </svg>
+        </div>
+      </div>
+
+      <div class="hero__scroll-indicator" data-scroll data-scroll-speed="-1">
+        <div class="hero__scroll-line"></div>
+        <span>Scroll</span>
+      </div>
+    </section>
+
+    <!-- ───────── ABOUT SECTION ───────── -->
+    <section class="about" id="about" data-scroll-section>
+      <div class="section__header">
+        <span class="section__number">01</span>
+        <h2 class="section__title">About Me</h2>
+        <div class="section__line"></div>
+      </div>
+
+      <div class="about__grid">
+        <div class="about__image-wrap">
+          <div class="about__image-frame">
+            <div class="about__image-glow"></div>
+            <img
+              src="images/aman-headshot.png"
+              alt="Aman Ulla headshot"
+              class="about__image"
+              loading="lazy"
+            />
+          </div>
+          <div class="about__image-tag">Aman Ulla</div>
+        </div>
+
+        <div class="about__info">
+          <h3 class="about__headline">Accomplished Full Stack AI Engineer &amp; AI Architect</h3>
+          <p class="about__bio">
+            With 5.5+ years of robust experience in architecting, leading, and deploying scalable AI solutions. 
+            Possessing deep expertise in LLM, Finetuning, MLOps, LLMOps, NLP, and Computer Vision. 
+            I leverage cloud technologies and project management to drive innovative and cost-effective 
+            machine learning initiatives across global organizations.
+          </p>
+          <p class="about__bio">
+            MSc in Machine Learning &amp; AI from Liverpool John Moores University. Featured in Times of India 
+            for representing India and winning at NASA. Published 5 research papers in IEEE journals.
+          </p>
+
+          <div class="about__stats">
+            <div class="about__stat">
+              <span class="about__stat-num" data-count="5.5">0</span><span class="about__stat-plus">+</span>
+              <span class="about__stat-label">Years Exp</span>
+            </div>
+            <div class="about__stat">
+              <span class="about__stat-num" data-count="10">0</span><span class="about__stat-plus">+</span>
+              <span class="about__stat-label">Projects Delivered</span>
+            </div>
+            <div class="about__stat">
+              <span class="about__stat-num" data-count="5">0</span>
+              <span class="about__stat-label">Research Papers</span>
+            </div>
+            <div class="about__stat">
+              <span class="about__stat-num" data-count="3">0</span>
+              <span class="about__stat-label">Hackathon Wins</span>
+            </div>
+            <div class="about__stat">
+              <span class="about__stat-num" data-count="1">0</span>
+              <span class="about__stat-label">Patent Granted</span>
+            </div>
+            <div class="about__stat">
+              <span class="about__stat-num" data-count="24">0</span><span class="about__stat-plus">+</span>
+              <span class="about__stat-label">Blog Posts</span>
+            </div>
+            <div class="about__stat">
+              <span class="about__stat-num" data-count="8">0</span>
+              <span class="about__stat-label">Recommendations</span>
+            </div>
+            <div class="about__stat">
+              <span class="about__stat-num" data-count="100+">0</span><span class="about__stat-plus">+</span>
+              <span class="about__stat-label">Github Repositories</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ───────── SKILLS SECTION (Interactive) ───────── -->
+    <section class="skills" id="skills" data-scroll-section>
+      <div class="section__header">
+        <span class="section__number">02</span>
+        <h2 class="section__title">Skills &amp; Expertise</h2>
+        <div class="section__line"></div>
+      </div>
+
+      <div class="skills__container">
+        <!-- Skill Category Tabs -->
+        <div class="skills__tabs">
+          <button class="skills__tab is-active" data-tab="all">All</button>
+          <button class="skills__tab" data-tab="languages">Languages</button>
+          <button class="skills__tab" data-tab="aiml">AI / ML</button>
+          <button class="skills__tab" data-tab="llm">LLM &amp; GenAI</button>
+          <button class="skills__tab" data-tab="cloud">Cloud &amp; DevOps</button>
+          <button class="skills__tab" data-tab="backend">Backend &amp; DB</button>
+          <button class="skills__tab" data-tab="soft">Leadership</button>
+        </div>
+
+        <!-- Skills Grid -->
+        <div class="skills__grid" id="skillsGrid">
+          <!-- Languages -->
+          <div class="skill-chip" data-category="languages">
+            <i class="ph-light ph-file-py"></i><span>Python</span>
+            <div class="skill-chip__bar"><div class="skill-chip__fill" data-level="98"></div></div>
+          </div>
+
+          <!-- AI / ML Frameworks -->
+          <div class="skill-chip" data-category="aiml">
+            <i class="ph-light ph-brain"></i><span>TensorFlow</span>
+            <div class="skill-chip__bar"><div class="skill-chip__fill" data-level="90"></div></div>
+          </div>
+          <div class="skill-chip" data-category="aiml">
+            <i class="ph-light ph-lightning"></i><span>PyTorch</span>
+            <div class="skill-chip__bar"><div class="skill-chip__fill" data-level="92"></div></div>
+          </div>
+          <div class="skill-chip" data-category="aiml">
+            <i class="ph-light ph-chart-line-up"></i><span>scikit-learn</span>
+            <div class="skill-chip__bar"><div class="skill-chip__fill" data-level="95"></div></div>
+          </div>
+          <div class="skill-chip" data-category="aiml">
+            <i class="ph-light ph-eye"></i><span>OpenCV</span>
+            <div class="skill-chip__bar"><div class="skill-chip__fill" data-level="85"></div></div>
+          </div>
+          <div class="skill-chip" data-category="aiml">
+            <i class="ph-light ph-flow-arrow"></i><span>MLflow</span>
+            <div class="skill-chip__bar"><div class="skill-chip__fill" data-level="88"></div></div>
+          </div>
+          <div class="skill-chip" data-category="aiml">
+            <i class="ph-light ph-fire"></i><span>Keras</span>
+            <div class="skill-chip__bar"><div class="skill-chip__fill" data-level="88"></div></div>
+          </div>
+          <div class="skill-chip" data-category="aiml">
+            <i class="ph-light ph-table"></i><span>NumPy / Pandas</span>
+            <div class="skill-chip__bar"><div class="skill-chip__fill" data-level="96"></div></div>
+          </div>
+          <div class="skill-chip" data-category="aiml">
+            <i class="ph-light ph-text-aa"></i><span>spaCy / NLTK</span>
+            <div class="skill-chip__bar"><div class="skill-chip__fill" data-level="85"></div></div>
+          </div>
+          <div class="skill-chip" data-category="aiml">
+            <i class="ph-light ph-lightning"></i><span>ONNX</span>
+            <div class="skill-chip__bar"><div class="skill-chip__fill" data-level="78"></div></div>
+          </div>
+          <div class="skill-chip" data-category="aiml">
+            <i class="ph-light ph-intersect-three"></i><span>Ray</span>
+            <div class="skill-chip__bar"><div class="skill-chip__fill" data-level="75"></div></div>
+          </div>
+          <div class="skill-chip" data-category="aiml">
+            <i class="ph-light ph-flame"></i><span>PySpark</span>
+            <div class="skill-chip__bar"><div class="skill-chip__fill" data-level="80"></div></div>
+          </div>
+
+          <!-- LLM & GenAI -->
+          <div class="skill-chip" data-category="llm">
+            <i class="ph-light ph-link-simple-horizontal"></i><span>LangChain</span>
+            <div class="skill-chip__bar"><div class="skill-chip__fill" data-level="92"></div></div>
+          </div>
+          <div class="skill-chip" data-category="llm">
+            <i class="ph-light ph-magnifying-glass"></i><span>LlamaIndex</span>
+            <div class="skill-chip__bar"><div class="skill-chip__fill" data-level="88"></div></div>
+          </div>
+          <div class="skill-chip" data-category="llm">
+            <i class="ph-light ph-cpu"></i><span>Transformers</span>
+            <div class="skill-chip__bar"><div class="skill-chip__fill" data-level="90"></div></div>
+          </div>
+          <div class="skill-chip" data-category="llm">
+            <i class="ph-light ph-stack"></i><span>Haystack</span>
+            <div class="skill-chip__bar"><div class="skill-chip__fill" data-level="82"></div></div>
+          </div>
+          <div class="skill-chip" data-category="llm">
+            <i class="ph-light ph-database"></i><span>FAISS</span>
+            <div class="skill-chip__bar"><div class="skill-chip__fill" data-level="85"></div></div>
+          </div>
+          <div class="skill-chip" data-category="llm">
+            <i class="ph-light ph-circles-three-plus"></i><span>ChromaDB</span>
+            <div class="skill-chip__bar"><div class="skill-chip__fill" data-level="80"></div></div>
+          </div>
+          <div class="skill-chip" data-category="llm">
+            <i class="ph-light ph-tree-structure"></i><span>PineCone</span>
+            <div class="skill-chip__bar"><div class="skill-chip__fill" data-level="80"></div></div>
+          </div>
+          <div class="skill-chip" data-category="llm">
+            <i class="ph-light ph-shield-check"></i><span>RAGAS / Guardrails</span>
+            <div class="skill-chip__bar"><div class="skill-chip__fill" data-level="85"></div></div>
+          </div>
+          <div class="skill-chip" data-category="llm">
+            <i class="ph-light ph-chat-centered-text"></i><span>Prompt Engineering</span>
+            <div class="skill-chip__bar"><div class="skill-chip__fill" data-level="95"></div></div>
+          </div>
+          <div class="skill-chip" data-category="llm">
+            <i class="ph-light ph-wrench"></i><span>PEFT / LoRA / Unsloth</span>
+            <div class="skill-chip__bar"><div class="skill-chip__fill" data-level="85"></div></div>
+          </div>
+          <div class="skill-chip" data-category="llm">
+            <i class="ph-light ph-arrows-in"></i><span>BitsAndBytes</span>
+            <div class="skill-chip__bar"><div class="skill-chip__fill" data-level="82"></div></div>
+          </div>
+
+          <!-- Cloud & DevOps -->
+          <div class="skill-chip" data-category="cloud">
+            <i class="ph-light ph-cloud"></i><span>AWS</span>
+            <div class="skill-chip__bar"><div class="skill-chip__fill" data-level="90"></div></div>
+          </div>
+          <div class="skill-chip" data-category="cloud">
+            <i class="ph-light ph-cloud-arrow-up"></i><span>Azure</span>
+            <div class="skill-chip__bar"><div class="skill-chip__fill" data-level="88"></div></div>
+          </div>
+          <div class="skill-chip" data-category="cloud">
+            <i class="ph-light ph-google-logo"></i><span>GCP</span>
+            <div class="skill-chip__bar"><div class="skill-chip__fill" data-level="82"></div></div>
+          </div>
+          <div class="skill-chip" data-category="cloud">
+            <i class="ph-light ph-database"></i><span>Databricks</span>
+            <div class="skill-chip__bar"><div class="skill-chip__fill" data-level="92"></div></div>
+          </div>
+          <div class="skill-chip" data-category="cloud">
+            <i class="ph-light ph-cube"></i><span>Docker</span>
+            <div class="skill-chip__bar"><div class="skill-chip__fill" data-level="90"></div></div>
+          </div>
+          <div class="skill-chip" data-category="cloud">
+            <i class="ph-light ph-kubernetes-logo"></i><span>Kubernetes</span>
+            <div class="skill-chip__bar"><div class="skill-chip__fill" data-level="85"></div></div>
+          </div>
+          <div class="skill-chip" data-category="cloud">
+            <i class="ph-light ph-git-branch"></i><span>GitHub Actions</span>
+            <div class="skill-chip__bar"><div class="skill-chip__fill" data-level="88"></div></div>
+          </div>
+          <div class="skill-chip" data-category="cloud">
+            <i class="ph-light ph-activity"></i><span>Grafana / Prometheus</span>
+            <div class="skill-chip__bar"><div class="skill-chip__fill" data-level="78"></div></div>
+          </div>
+
+          <!-- Backend & DB -->
+          <div class="skill-chip" data-category="backend">
+            <i class="ph-light ph-rocket-launch"></i><span>FastAPI</span>
+            <div class="skill-chip__bar"><div class="skill-chip__fill" data-level="92"></div></div>
+          </div>
+          <div class="skill-chip" data-category="backend">
+            <i class="ph-light ph-flask"></i><span>Flask</span>
+            <div class="skill-chip__bar"><div class="skill-chip__fill" data-level="88"></div></div>
+          </div>
+          <div class="skill-chip" data-category="backend">
+            <i class="ph-light ph-cylinder"></i><span>MySQL / PSQL</span>
+            <div class="skill-chip__bar"><div class="skill-chip__fill" data-level="82"></div></div>
+          </div>
+          <div class="skill-chip" data-category="backend">
+            <i class="ph-light ph-graph"></i><span>Knowledge Graph</span>
+            <div class="skill-chip__bar"><div class="skill-chip__fill" data-level="78"></div></div>
+          </div>
+          <div class="skill-chip" data-category="backend">
+            <i class="ph-light ph-magnifying-glass"></i><span>ElasticSearch</span>
+            <div class="skill-chip__bar"><div class="skill-chip__fill" data-level="80"></div></div>
+          </div>
+          <div class="skill-chip" data-category="backend">
+            <i class="ph-light ph-test-tube"></i><span>pytest / unittest</span>
+            <div class="skill-chip__bar"><div class="skill-chip__fill" data-level="85"></div></div>
+          </div>
+
+          <!-- Soft Skills / Leadership -->
+          <div class="skill-chip skill-chip--soft" data-category="soft">
+            <i class="ph-light ph-users-three"></i><span>Team Management</span>
+          </div>
+          <div class="skill-chip skill-chip--soft" data-category="soft">
+            <i class="ph-light ph-kanban"></i><span>Project Management</span>
+          </div>
+          <div class="skill-chip skill-chip--soft" data-category="soft">
+            <i class="ph-light ph-lightbulb"></i><span>Problem Solving</span>
+          </div>
+          <div class="skill-chip skill-chip--soft" data-category="soft">
+            <i class="ph-light ph-timer"></i><span>Fast-Paced Learner</span>
+          </div>
+          <div class="skill-chip skill-chip--soft" data-category="soft">
+            <i class="ph-light ph-shield-star"></i><span>AI Security &amp; Compliance</span>
+          </div>
+          <div class="skill-chip skill-chip--soft" data-category="soft">
+            <i class="ph-light ph-arrows-split"></i><span>Microservice Design</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ───────── EXPERIENCE SECTION ───────── -->
+    <section class="experience" id="experience" data-scroll-section>
+      <div class="section__header">
+        <span class="section__number">03</span>
+        <h2 class="section__title">Experience</h2>
+        <div class="section__line"></div>
+      </div>
+
+      <div class="experience__timeline">
+        <!-- Experience 1 -->
+        <div class="exp-card">
+          <div class="exp-card__dot"></div>
+          <div class="exp-card__content">
+            <div class="exp-card__header">
+              <h3 class="exp-card__role">Senior Consultant</h3>
+              <span class="exp-card__company">Thoughtworks</span>
+            </div>
+            <span class="exp-card__date">Aug 2024 – Present</span>
+            <ul class="exp-card__list">
+              <li>Led a 12-member team to optimize, automate, and deploy ML pipelines using Databricks for clients across 8 countries</li>
+              <li>Enabled 50% reduction in ML pipeline execution time, significantly lowering operational costs</li>
+              <li>Built ML monitoring and human-in-the-loop decision platform, saving 40 billable human hours</li>
+              <li>Leading client PoC for automated API testing framework leveraging GenAI and NLP</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Experience 2 -->
+        <div class="exp-card">
+          <div class="exp-card__dot"></div>
+          <div class="exp-card__content">
+            <div class="exp-card__header">
+              <h3 class="exp-card__role">Senior ML Engineer</h3>
+              <span class="exp-card__company">ZS Associates</span>
+            </div>
+            <span class="exp-card__date">Sept 2022 – Aug 2024</span>
+            <ul class="exp-card__list">
+              <li>Architected end-to-end GenAI product with RAG capabilities for 12,000 users across 5 clients</li>
+              <li>Deployed open-source LLMs on Kubernetes, reducing infrastructure costs from $20K to $6K through quantization</li>
+              <li>Refactored monolithic application into microservices architecture</li>
+              <li>Led migration of ML models from DataRobot to Databricks — 70% faster, 60% cheaper</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Experience 3 -->
+        <div class="exp-card">
+          <div class="exp-card__dot"></div>
+          <div class="exp-card__content">
+            <div class="exp-card__header">
+              <h3 class="exp-card__role">Software Engineer (AI)</h3>
+              <span class="exp-card__company">CitiusTech</span>
+            </div>
+            <span class="exp-card__date">Jul 2021 – Aug 2022</span>
+            <ul class="exp-card__list">
+              <li>Built and deployed clinical NLP pipelines, ML model inferencing pipelines, and semantic search engine APIs</li>
+              <li>Implemented graph query language solutions for advanced AI deployments</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Experience 4 -->
+        <div class="exp-card">
+          <div class="exp-card__dot"></div>
+          <div class="exp-card__content">
+            <div class="exp-card__header">
+              <h3 class="exp-card__role">Engineer (AI)</h3>
+              <span class="exp-card__company">Mindtree Ltd</span>
+            </div>
+            <span class="exp-card__date">Sept 2020 – Jul 2021</span>
+            <ul class="exp-card__list">
+              <li>Worked with AI COE in rapid prototyping, research, and building optimized ML pipelines</li>
+              <li>Built end-to-end POC solutions with TensorFlow, OpenCV, and Transfer Learning</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ───────── ACHIEVEMENTS SECTION ───────── -->
+    <section class="achievements" id="achievements" data-scroll-section>
+      <div class="section__header">
+        <span class="section__number">04</span>
+        <h2 class="section__title">Achievements</h2>
+        <div class="section__line"></div>
+      </div>
+
+      <div class="achievements__grid">
+        <div class="achievement-card">
+          <div class="achievement-card__icon"><img src="images/logos/google.svg" alt="Google" class="achievement-card__logo" /></div>
+          <h3>Google GenAI Hackathon</h3>
+          <p>Winner (1st Place) surpassing 2.78 Lakh participants and 1.8L teams in the GenAI Exchange Hackathon</p>
+          <div class="achievement-card__gallery">
+            <img src="images/google-hackathon-1.jpg" alt="Google GenAI Hackathon photo 1" loading="lazy" />
+            <img src="images/google-hackathon-2.jpg" alt="Google GenAI Hackathon photo 2" loading="lazy" />
+          </div>
+        </div>
+        <div class="achievement-card">
+          <div class="achievement-card__icon"><img src="images/logos/nasa.svg" alt="NASA" class="achievement-card__logo" /></div>
+          <h3>NASA Hackathon</h3>
+          <p>Winner (1st Place) in Research Rovers AI Research Assistants, surpassing 300 international participants</p>
+          <div class="achievement-card__gallery">
+            <img src="images/nasa-1.png" alt="NASA Hackathon photo 1" loading="lazy" />
+            <img src="images/nasa-1.png" alt="NASA Hackathon photo 2" loading="lazy" />
+          </div>
+        </div>
+        <div class="achievement-card">
+          <div class="achievement-card__icon"><img src="images/logos/zs.svg" alt="ZS" class="achievement-card__logo" /></div>
+          <h3>ZS GenAI Hackathon</h3>
+          <p>Winner (1st Place) building an effective and robust RAG system for unstructured documents</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ───────── TESTIMONIALS SECTION ───────── -->
+    <section class="testimonials" id="testimonials" data-scroll-section>
+      <div class="section__header">
+        <span class="section__number">05</span>
+        <h2 class="section__title">Recommendations</h2>
+        <div class="section__line"></div>
+      </div>
+
+      <div class="testimonials__viewport">
+        <div class="testimonials__grid" id="testimonialsTrack">
+          <div class="testimonial-card">
+          <p class="testimonial-card__quote">
+            I had the opportunity to work closely with Aman on several AI and process improvement initiatives and I was consistently impressed by how quickly he expanded his role and contributions to cover increasingly complex responsibilities.
+            From the outset he demonstrated strong technical fundamentals, particularly in Python-based development, and rapidly demonstrated his capabilities across the full stack.
+            He approached each challenge with curiosity, discipline and a clear commitment to delivering quality products and results. His growth over the relatively short period we worked together was remarkable.
+            What stood out most was his ability to move beyond assigned tasks and begin thinking at the solution and product level.
+            He actively engaged with business stakeholders, asked thoughtful questions to clarify requirements and demonstrated an increasing ability to translate business needs into practical technical designs.
+            Rather than working in isolation, he consistently sought context from the business and solicited feedback for the purpose of delivering better outcomes.
+            He also embraced ownership. As projects progressed, he became more comfortable leading components end-to-end, coordinating across teams and driving deliverables to completion.
+            His trajectory shows both technical depth and leadership potential.
+            Aman is clearly on a path toward larger roles and broader responsibility. With his rate of growth, strong work ethic and expanding technical and business acumen I'm confident he will continue to excel and prove a valuable asset and both deserves, and will deliver on, increasingly impactful leadership opportunities.
+          </p>
+          <div class="testimonial-card__meta">
+            <div class="testimonial-card__name">Erik Aston</div>
+            <div class="testimonial-card__role">Sr Manager, IT | Advanced Analytics</div>
+          </div>
+        </div>
+
+          <div class="testimonial-card">
+          <p class="testimonial-card__quote">
+            I'm happy to recommend Aman Ulla. As a colleague, I found him to be a methodical and capable professional who focuses on meaningful improvements.
+            Aman has a strong ability to analyze problems and develop effective, well-rounded solutions. He takes clear ownership of his projects, guiding them from start to finish while ensuring a smooth handoff and continuity.
+            He is also an eager learner who proactively develops new skills and willingly shares his knowledge with the team.
+            Aman is a reliable and supportive team member who contributes positively to the work environment.
+            I am confident Aman will succeed in more advanced roles and any team would benefit from having him.
+          </p>
+          <div class="testimonial-card__meta">
+            <div class="testimonial-card__name">Ashish Duhan</div>
+            <div class="testimonial-card__role">AI Leader @ Thoughtworks</div>
+          </div>
+        </div>
+
+          <div class="testimonial-card">
+          <p class="testimonial-card__quote">
+            Aman brings deep expertise in RAG and pairs it with a strong curiosity to explore new domains beyond his prior experience.
+            His ability to approach unfamiliar challenges with focus and adaptability makes him a valuable asset.
+            I enjoyed working with him and look forward to his continued success.
+          </p>
+          <div class="testimonial-card__meta">
+            <div class="testimonial-card__name">Karanveer S. Grewal</div>
+            <div class="testimonial-card__role">Manager at Strategy&amp;</div>
+          </div>
+        </div>
+
+          <div class="testimonial-card">
+          <p class="testimonial-card__quote">
+            As one of our full stack AI engineer, Aman Ulla always stood ahead of others in terms of his work ethics, team bonding, eagerness to learn new things &amp; not to shy away from asking right set of questions.
+            His ability to adopt new skills &amp; delivering value through rapid prototyping is an asset.
+            In short span of 6 months that I worked with him, get to know him; he acquired skills &amp; proficiency in building &amp; deploying advance Clinical NLP pipelines, ML model inferencing pipelines, semantic search engine API, Graph query language and associated front end &amp; backend tech on cloud &amp; on premise infrastructure.
+            Aman is exceptionally talented when it comes to technical tasks &amp; will be an asset to any organisation.
+            It's been a pleasure knowing &amp; working with Aman. In fact I learned so many GCP related tricks &amp; techniques from him.
+            Keep it up Aman!
+          </p>
+          <div class="testimonial-card__meta">
+            <div class="testimonial-card__name">Yogesh Parte</div>
+            <div class="testimonial-card__role">Accelerating Innovation in Healthcare</div>
+          </div>
+        </div>
+
+          <div class="testimonial-card">
+          <p class="testimonial-card__quote">
+            I have been working with aman during workshops, we have conducted many workshops across the country, aman has consistently trained many batches and has always delivered the best, the students have always enjoyed his classes and learnt a lot, aman is always ahead in his times for teaching students.
+          </p>
+          <div class="testimonial-card__meta">
+            <div class="testimonial-card__name">swaraj kumar</div>
+            <div class="testimonial-card__role">Software Engineer → Generative AI</div>
+          </div>
+        </div>
+
+          <div class="testimonial-card">
+          <p class="testimonial-card__quote">
+            I worked with aman in the same team, he was the team player always in the front line to do things before the deadline, he is a genius when it comes to coding.
+            He always maintains the interest level to learn and adapt.
+          </p>
+          <div class="testimonial-card__meta">
+            <div class="testimonial-card__name">Akash P Rajasekharan</div>
+            <div class="testimonial-card__role">Consultant</div>
+          </div>
+        </div>
+
+          <div class="testimonial-card">
+          <p class="testimonial-card__quote">
+            I studied with aman in same class. Entire computer science department was admired his work, he even got recognized in the hall of fame of college, he not only tops the class but puts ample efforts for all events,
+            He is full of energy and always involves in teaching and competing with others,
+          </p>
+          <div class="testimonial-card__meta">
+            <div class="testimonial-card__name">Arpit Singh</div>
+            <div class="testimonial-card__role">Open-source contributor</div>
+          </div>
+        </div>
+
+          <div class="testimonial-card">
+          <p class="testimonial-card__quote">
+            Aman has been a ball of energy, I had approached him for My company website + portal, he was keen on working for our project and he delivered the project the way we wanted, the backend had no issues and front end was smooth and it was great.
+          </p>
+          <div class="testimonial-card__meta">
+            <div class="testimonial-card__name">Inayat Ulla</div>
+            <div class="testimonial-card__role">Key Partnership @ Google</div>
+          </div>
+        </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ───────── PROJECTS SECTION ───────── -->
+    <section class="projects" id="projects" data-scroll-section>
+      <div class="section__header">
+        <span class="section__number">06</span>
+        <h2 class="section__title">Projects &amp; Open Source</h2>
+        <div class="section__line"></div>
+      </div>
+
+      <div class="projects__scroll-wrap">
+        <div class="projects__track" id="projectsTrack">
+          <!-- Project 1 -->
+          <div class="project-card">
+            <div class="project-card__glow"></div>
+            <div class="project-card__icon"><i class="ph-light ph-package"></i></div>
+            <h3 class="project-card__title">LoPace</h3>
+            <p class="project-card__desc">Open-source Python package for compressing & decompressing prompts. Achieves up to 80% space reduction with perfect lossless reconstruction.</p>
+            <div class="project-card__stack">
+              <span>Python</span><span>NLP</span><span>Compression</span>
+            </div>
+            <a href="https://github.com/connectaman/LoPace" target="_blank" rel="noopener" class="project-card__link">
+              <i class="ph-light ph-github-logo"></i> View on GitHub
+            </a>
+            <a href="https://arxiv.org/abs/2602.13266" target="_blank" rel="noopener" class="project-card__link">
+              <i class="ph-light ph-file-text"></i> View arXiv Paper
+            </a>
+          </div>
+
+          <!-- Project 2 -->
+          <div class="project-card">
+            <div class="project-card__glow"></div>
+            <div class="project-card__icon"><i class="ph-light ph-file-search"></i></div>
+            <h3 class="project-card__title">Novalad.ai</h3>
+            <p class="project-card__desc">Intelligent document parsing accelerator that outperforms state-of-the-art data parsing tools on benchmark evaluations.</p>
+            <div class="project-card__stack">
+              <span>AI</span><span>Document Parsing</span><span>Python</span>
+            </div>
+            <a href="https://www.novalad.ai" target="_blank" rel="noopener" class="project-card__link">
+              <i class="ph-light ph-arrow-square-out"></i> Visit Site
+            </a>
+            <a href="https://arxiv.org/abs/2603.00122" target="_blank" rel="noopener" class="project-card__link">
+              <i class="ph-light ph-file-text"></i> View arXiv Paper
+            </a>
+          </div>
+
+          <!-- Project 3 -->
+          <div class="project-card">
+            <div class="project-card__glow"></div>
+            <div class="project-card__icon"><i class="ph-light ph-chart-line-up"></i></div>
+            <h3 class="project-card__title">PitchLense</h3>
+            <p class="project-card__desc">Platform enabling investors to analyze and evaluate startups before making investment decisions using AI-powered insights.</p>
+            <div class="project-card__stack">
+              <span>GenAI</span><span>Analytics</span><span>Full Stack</span>
+            </div>
+            <a href="https://www.youtube.com/watch?v=HQrLTwL4aA0" target="_blank" rel="noopener" class="project-card__link">
+              <i class="ph-light ph-play-circle"></i> Watch Demo
+            </a>
+            <a href="https://github.com/connectaman/PitchLense" target="_blank" rel="noopener" class="project-card__link">
+              <i class="ph-light ph-github-logo"></i> Visit Repo
+            </a>
+          </div>
+
+          <!-- Project 4 (moved up) -->
+          <div class="project-card">
+            <div class="project-card__glow"></div>
+            <div class="project-card__icon"><i class="ph-light ph-planet"></i></div>
+            <h3 class="project-card__title">Palooza — NASA</h3>
+            <p class="project-card__desc">AI Research Assistant for NASA Hackathon. Won 1st place surpassing 300 international participants with innovative AI solutions.</p>
+            <div class="project-card__stack">
+              <span>AI</span><span>Research</span><span>NLP</span>
+            </div>
+            <a href="https://github.com/connectaman/Palooza" target="_blank" rel="noopener" class="project-card__link">
+              <i class="ph-light ph-github-logo"></i> View on GitHub
+            </a>
+          </div>
+
+          <!-- Project 6 -->
+          <div class="project-card">
+            <div class="project-card__glow"></div>
+            <div class="project-card__icon"><i class="ph-light ph-planet"></i></div>
+            <h3 class="project-card__title">Palooza — NASA</h3>
+            <p class="project-card__desc">AI Research Assistant for NASA Hackathon. Won 1st place surpassing 300 international participants with innovative AI solutions.</p>
+            <div class="project-card__stack">
+              <span>AI</span><span>Research</span><span>NLP</span>
+            </div>
+            <a href="https://github.com/connectaman/Palooza" target="_blank" rel="noopener" class="project-card__link">
+              <i class="ph-light ph-github-logo"></i> View on GitHub
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ───────── CERTIFICATIONS SECTION ───────── -->
+    <section class="certifications" id="certifications" data-scroll-section>
+      <div class="section__header">
+        <span class="section__number">07</span>
+        <h2 class="section__title">Certifications</h2>
+        <div class="section__line"></div>
+      </div>
+
+      <div class="certs__grid">
+        <div class="cert-card">
+          <div class="cert-card__badge"><img src="images/logos/databricks.svg" alt="Databricks" class="cert-card__logo" /></div>
+          <div class="cert-card__info">
+            <h3>Databricks Certified Machine Learning Associate</h3>
+            <span class="cert-card__issuer">Databricks</span>
+            <span class="cert-card__date">Dec 2024 – Dec 2026</span>
+          </div>
+          <div class="cert-card__status cert-card__status--active">Active</div>
+        </div>
+        <div class="cert-card">
+          <div class="cert-card__badge"><img src="images/logos/aws.svg" alt="AWS" class="cert-card__logo" /></div>
+          <div class="cert-card__info">
+            <h3>AWS Certified Solutions Architect Associate</h3>
+            <span class="cert-card__issuer">Amazon Web Services</span>
+            <span class="cert-card__date">Nov 2022 – Nov 2025</span>
+          </div>
+          <div class="cert-card__status cert-card__status--active">Active</div>
+        </div>
+        <div class="cert-card">
+          <div class="cert-card__badge"><img src="images/logos/gcp.svg" alt="Google Cloud" class="cert-card__logo" /></div>
+          <div class="cert-card__info">
+            <h3>Google Cloud Certified Associate Cloud Engineer</h3>
+            <span class="cert-card__issuer">Google Cloud</span>
+            <span class="cert-card__date">Feb 2022 – Feb 2024</span>
+          </div>
+          <div class="cert-card__status cert-card__status--completed">Completed</div>
+        </div>
+        <div class="cert-card">
+          <div class="cert-card__badge"><img src="images/logos/microsoft.svg" alt="Microsoft" class="cert-card__logo" /></div>
+          <div class="cert-card__info">
+            <h3>Microsoft Certified Trainer</h3>
+            <span class="cert-card__issuer">Microsoft</span>
+            <span class="cert-card__date">2021 – 2022</span>
+          </div>
+          <div class="cert-card__status cert-card__status--completed">Completed</div>
+        </div>
+        <div class="cert-card">
+          <div class="cert-card__badge"><img src="images/logos/azure.svg" alt="Azure" class="cert-card__logo" /></div>
+          <div class="cert-card__info">
+            <h3>Azure Data Scientist Associate</h3>
+            <span class="cert-card__issuer">Microsoft</span>
+            <span class="cert-card__date">May 2021 – May 2023</span>
+          </div>
+          <div class="cert-card__status cert-card__status--completed">Completed</div>
+        </div>
+        <div class="cert-card">
+          <div class="cert-card__badge"><img src="images/logos/azure.svg" alt="Azure" class="cert-card__logo" /></div>
+          <div class="cert-card__info">
+            <h3>Azure AI Engineer Associate</h3>
+            <span class="cert-card__issuer">Microsoft</span>
+            <span class="cert-card__date">Mar 2021 – Mar 2023</span>
+          </div>
+          <div class="cert-card__status cert-card__status--completed">Completed</div>
+        </div>
+        <div class="cert-card">
+          <div class="cert-card__badge"><img src="images/logos/azure.svg" alt="Azure" class="cert-card__logo" /></div>
+          <div class="cert-card__info">
+            <h3>Azure Data Fundamentals</h3>
+            <span class="cert-card__issuer">Microsoft</span>
+            <span class="cert-card__date">May 2021 – Current</span>
+          </div>
+          <div class="cert-card__status cert-card__status--active">Active</div>
+        </div>
+        <div class="cert-card">
+          <div class="cert-card__badge"><img src="images/logos/azure.svg" alt="Azure" class="cert-card__logo" /></div>
+          <div class="cert-card__info">
+            <h3>Azure AI Fundamentals</h3>
+            <span class="cert-card__issuer">Microsoft</span>
+            <span class="cert-card__date">Mar 2021 – Current</span>
+          </div>
+          <div class="cert-card__status cert-card__status--active">Active</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ───────── PATENT SECTION ───────── -->
+    <section class="patent" id="patent" data-scroll-section>
+      <div class="section__header">
+        <span class="section__number">08</span>
+        <h2 class="section__title">Patent</h2>
+        <div class="section__line"></div>
+      </div>
+
+      <div class="patent__card">
+        <div class="patent__glow"></div>
+        <div class="patent__icon"><img src="images/logos/patent.svg" alt="Patent" class="patent__logo" /></div>
+        <div class="patent__content">
+          <h3 class="patent__title">System and Methods for Plotting Retail Shelves to Arrange Products in Retail Store</h3>
+          <div class="patent__meta">
+            <span><i class="ph-light ph-hash"></i> Application No: 202241011335</span>
+            <span><i class="ph-light ph-calendar"></i> Grant Date: 17th August 2023</span>
+          </div>
+          <p class="patent__desc">An innovative approach/algorithm to effectively identify shelves based out of bounding boxes from SKU-detection, enabling automated retail shelf arrangement and product placement optimization.</p>
+          <div class="patent__badge">Granted Patent &bull; Indian Patent Office</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ───────── PUBLICATIONS SECTION ───────── -->
+    <section class="publications" id="publications" data-scroll-section>
+      <div class="section__header">
+        <span class="section__number">09</span>
+        <h2 class="section__title">Publications</h2>
+        <div class="section__line"></div>
+      </div>
+
+      <div class="pubs__grid">
+        <div class="pub-card">
+          <div class="pub-card__type"><i class="ph-light ph-book-open-text"></i> Research Papers</div>
+          <h3 class="pub-card__stat">5</h3>
+          <p class="pub-card__desc">Published in IEEE and other reputed journals covering AI, ML, and Computer Vision research.</p>
+          <a
+            href="https://arxiv.org/search/?query=Ulla%2C+Aman&searchtype=author&abstracts=show&order=-announced_date_first&size=50"
+            target="_blank"
+            rel="noopener"
+            class="pub-card__link"
+          >
+            <i class="ph-light ph-arrow-square-out"></i> View on arXiv
+          </a>
+          <div class="pub-card__glow"></div>
+        </div>
+        <div class="pub-card">
+          <div class="pub-card__type"><i class="ph-light ph-article"></i> Technical Blogs</div>
+          <h3 class="pub-card__stat">24+</h3>
+          <p class="pub-card__desc">Authored technical blogs on AI/ML topics, collectively garnering 14K+ views across platforms</p>
+          <a href="https://hashnode.com/@connectaman" target="_blank" rel="noopener" class="pub-card__link"><i class="ph-light ph-arrow-square-out"></i> Read on Hashnode</a>
+          <div class="pub-card__glow"></div>
+        </div>
+        <div class="pub-card">
+          <div class="pub-card__type"><i class="ph-light ph-newspaper-clipping"></i> Media Feature</div>
+          <h3 class="pub-card__stat">Times of India</h3>
+          <p class="pub-card__desc">Featured for representing India and winning at NASA International Hackathon</p>
+          <a
+            href="https://media.licdn.com/dms/image/v2/D561FAQGI12CeQfQA6Q/feedshare-document-images_1920/feedshare-document-images_1920/1/1702894159682?e=1775088000&v=beta&t=oewsVIDpn9IqGHoqScGRFtipRHpRVoSN4pNri2mD9NM"
+            target="_blank"
+            rel="noopener"
+            class="pub-card__link"
+          >
+            <i class="ph-light ph-arrow-square-out"></i> View Times of India page
+          </a>
+          <div class="pub-card__glow"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ───────── CONTACT SECTION ───────── -->
+    <section class="contact" id="contact" data-scroll-section>
+      <div class="section__header">
+        <span class="section__number">10</span>
+        <h2 class="section__title">Get In Touch</h2>
+        <div class="section__line"></div>
+      </div>
+
+      <div class="contact__grid">
+        <div class="contact__info">
+          <p class="contact__desc">
+            Whether you need an AI architect to design scalable ML systems, a consultant for your GenAI initiative, 
+            or a technical leader for your engineering team — let's connect.
+          </p>
+          <div class="contact__details">
+            <a href="mailto:connectamanulla@gmail.com" class="contact__detail">
+              <i class="ph-light ph-envelope-simple"></i>
+              <span>connectamanulla@gmail.com</span>
+            </a>
+            <a href="https://www.amanulla.in" target="_blank" rel="noopener" class="contact__detail">
+              <i class="ph-light ph-globe-simple"></i>
+              <span>www.amanulla.in</span>
+            </a>
+          </div>
+          <div class="contact__socials">
+            <a href="https://www.linkedin.com/in/connectaman/" target="_blank" rel="noopener" class="contact__social" aria-label="LinkedIn">
+              <i class="ph-light ph-linkedin-logo"></i>
+            </a>
+            <a href="https://www.instagram.com/its.amanulla/" target="_blank" rel="noopener" class="contact__social" aria-label="Instagram">
+              <i class="ph-light ph-instagram-logo"></i>
+            </a>
+            <a href="https://github.com/connectaman" target="_blank" rel="noopener" class="contact__social" aria-label="GitHub">
+              <i class="ph-light ph-github-logo"></i>
+            </a>
+            <a href="https://huggingface.co/connectaman" target="_blank" rel="noopener" class="contact__social" aria-label="HuggingFace">
+              <svg class="contact-svg-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168C3.151 17.544 3 18 3 18.5c0 .828.672 1.5 1.5 1.5.357 0 .684-.125.94-.333A9.96 9.96 0 0012 22a9.96 9.96 0 006.56-2.333c.256.208.583.333.94.333.828 0 1.5-.672 1.5-1.5 0-.5-.151-.956-.438-1.332A9.936 9.936 0 0022 12c0-5.523-4.477-10-10-10zM8.5 9a1.5 1.5 0 110 3 1.5 1.5 0 010-3zm7 0a1.5 1.5 0 110 3 1.5 1.5 0 010-3zM7.5 15h9s-.5 3-4.5 3-4.5-3-4.5-3z"/></svg>
+            </a>
+            <a href="https://hashnode.com/@connectaman" target="_blank" rel="noopener" class="contact__social" aria-label="Hashnode">
+              <svg class="contact-svg-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M3.29 7.66l5.37-5.37a3.36 3.36 0 014.74 0l5.37 5.37a3.36 3.36 0 010 4.74l-5.37 5.37a3.36 3.36 0 01-4.74 0L3.29 12.4a3.36 3.36 0 010-4.74zm7.18 7.18a2.13 2.13 0 100-4.26 2.13 2.13 0 000 4.26z"/></svg>
+            </a>
+            <a href="https://arxiv.org/search/?query=Ulla%2C+Aman&searchtype=author&abstracts=show&order=-announced_date_first&size=50" target="_blank" rel="noopener" class="contact__social" aria-label="arXiv">
+              <svg class="contact-svg-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M4 4h6v6H4V4zm10 0h6v6h-6V4zM4 14h6v6H4v-6zm10 0h6v6h-6v-6z"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ───────── FOOTER ───────── -->
+    <footer class="footer" id="footer" data-scroll-section>
+      <div class="footer__particles">
+        <div class="footer__particle footer__particle--1"></div>
+        <div class="footer__particle footer__particle--2"></div>
+        <div class="footer__particle footer__particle--3"></div>
+        <div class="footer__particle footer__particle--4"></div>
+        <div class="footer__particle footer__particle--5"></div>
+        <div class="footer__particle footer__particle--6"></div>
+        <div class="footer__particle footer__particle--7"></div>
+        <div class="footer__particle footer__particle--8"></div>
+      </div>
+
+      <div class="footer__content">
+        <div class="footer__brand">
+          <span class="footer__logo">AU</span>
+          <p class="footer__tagline">Senior ML Engineer &bull; AI Architect</p>
+        </div>
+        <nav class="footer__nav">
+          <a href="#about" data-scroll-to>About</a>
+          <a href="#skills" data-scroll-to>Skills</a>
+          <a href="#experience" data-scroll-to>Experience</a>
+          <a href="#achievements" data-scroll-to>Achievements</a>
+          <a href="#projects" data-scroll-to>Projects</a>
+          <a href="#certifications" data-scroll-to>Certifications</a>
+          <a href="#publications" data-scroll-to>Publications</a>
+          <a href="#contact" data-scroll-to>Contact</a>
+        </nav>
+        <div class="footer__socials">
+          <a href="https://www.linkedin.com/in/connectaman/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="ph-light ph-linkedin-logo"></i></a>
+          <a href="https://www.instagram.com/its.amanulla/" target="_blank" rel="noopener" aria-label="Instagram"><i class="ph-light ph-instagram-logo"></i></a>
+          <a href="https://github.com/connectaman" target="_blank" rel="noopener" aria-label="GitHub"><i class="ph-light ph-github-logo"></i></a>
+          <a href="https://huggingface.co/connectaman" target="_blank" rel="noopener" aria-label="HuggingFace"><svg class="footer-svg-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168C3.151 17.544 3 18 3 18.5c0 .828.672 1.5 1.5 1.5.357 0 .684-.125.94-.333A9.96 9.96 0 0012 22a9.96 9.96 0 006.56-2.333c.256.208.583.333.94.333.828 0 1.5-.672 1.5-1.5 0-.5-.151-.956-.438-1.332A9.936 9.936 0 0022 12c0-5.523-4.477-10-10-10zM8.5 9a1.5 1.5 0 110 3 1.5 1.5 0 010-3zm7 0a1.5 1.5 0 110 3 1.5 1.5 0 010-3zM7.5 15h9s-.5 3-4.5 3-4.5-3-4.5-3z"/></svg></a>
+          <a href="https://hashnode.com/@connectaman" target="_blank" rel="noopener" aria-label="Hashnode"><svg class="footer-svg-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M3.29 7.66l5.37-5.37a3.36 3.36 0 014.74 0l5.37 5.37a3.36 3.36 0 010 4.74l-5.37 5.37a3.36 3.36 0 01-4.74 0L3.29 12.4a3.36 3.36 0 010-4.74zm7.18 7.18a2.13 2.13 0 100-4.26 2.13 2.13 0 000 4.26z"/></svg></a>
+          <a href="https://arxiv.org/search/?query=Ulla%2C+Aman&searchtype=author&abstracts=show&order=-announced_date_first&size=50" target="_blank" rel="noopener" aria-label="arXiv"><svg class="footer-svg-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M4 4h6v6H4V4zm10 0h6v6h-6V4zM4 14h6v6H4v-6zm10 0h6v6h-6v-6z"/></svg></a>
+        </div>
+        <div class="footer__copy">
+          <p>&copy; 2026 Aman Ulla. Crafted with precision.</p>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- Custom cursor -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-follower" id="cursorFollower"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
