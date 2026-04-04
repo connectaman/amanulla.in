@@ -87,7 +87,7 @@
   // MAIN SITE INITIALIZATION
   // ═══════════════════════════════════════════════════════════
   function initSite() {
-    initLocomotiveScroll();
+    initNativeScroll();
     initNavigation();
     initHeroAnimations();
     initGlowOrbs();
@@ -108,55 +108,20 @@
   }
 
   // ═══════════════════════════════════════════════════════════
-  // LOCOMOTIVE SCROLL
+  // NATIVE SCROLL
   // ═══════════════════════════════════════════════════════════
-  let locoScroll = null;
-
-  function initLocomotiveScroll() {
-    const scrollContainer = document.querySelector('[data-scroll-container]');
-
-    locoScroll = new LocomotiveScroll({
-      el: scrollContainer,
-      smooth: true,
-      multiplier: 0.8,
-      lerp: 0.06,
-      smartphone: { smooth: true, multiplier: 1.5 },
-      tablet: { smooth: true, multiplier: 1.5 },
-    });
-
-    // Sync with ScrollTrigger
-    locoScroll.on('scroll', ScrollTrigger.update);
-
-    ScrollTrigger.scrollerProxy(scrollContainer, {
-      scrollTop(value) {
-        return arguments.length
-          ? locoScroll.scrollTo(value, { duration: 0, disableLerp: true })
-          : locoScroll.scroll.instance.scroll.y;
-      },
-      getBoundingClientRect() {
-        return {
-          top: 0,
-          left: 0,
-          width: window.innerWidth,
-          height: window.innerHeight,
-        };
-      },
-      pinType: scrollContainer.style.transform ? 'transform' : 'fixed',
-    });
-
-    ScrollTrigger.addEventListener('refresh', () => locoScroll.update());
-    ScrollTrigger.defaults({ scroller: scrollContainer });
+  function initNativeScroll() {
     ScrollTrigger.refresh();
 
     // Nav scroll state
-    locoScroll.on('scroll', (args) => {
-      const nav = document.getElementById('navbar');
-      if (args.scroll.y > 100) {
+    const nav = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 100) {
         nav.classList.add('is-scrolled');
       } else {
         nav.classList.remove('is-scrolled');
       }
-    });
+    }, { passive: true });
   }
 
   // ═══════════════════════════════════════════════════════════
@@ -187,8 +152,9 @@
       el.addEventListener('click', (e) => {
         e.preventDefault();
         const target = el.getAttribute('href');
-        if (locoScroll && target) {
-          locoScroll.scrollTo(target);
+        if (target) {
+          const dest = document.querySelector(target);
+          if (dest) dest.scrollIntoView({ behavior: 'smooth' });
         }
       });
     });

@@ -58,6 +58,7 @@ html {
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
 }
 
 body {
@@ -65,6 +66,7 @@ body {
   background: var(--bg-primary);
   color: var(--text-primary);
   overflow-x: hidden;
+  min-height: 100vh;
   line-height: 1.6;
   letter-spacing: -0.01em;
   cursor: none;
@@ -140,6 +142,14 @@ body:hover .cursor-follower.cursor--hover {
   }
   body, a, button, input, textarea {
     cursor: auto;
+  }
+
+  /* Reduce paint cost on heavy animated elements */
+  .hero__orb,
+  .hero__grid,
+  .neural-canvas {
+    will-change: auto;
+    animation: none !important;
   }
 }
 
@@ -265,6 +275,8 @@ body:hover .cursor-follower.cursor--hover {
 .main-content {
   opacity: 0;
   visibility: hidden;
+  width: 100%;
+  overflow-x: hidden;
 }
 
 .main-content.is-visible {
@@ -381,13 +393,14 @@ body:hover .cursor-follower.cursor--hover {
     height: 16px;
   }
 
-  /* Mobile navbar: show only Twitter + Instagram */
+  /* Mobile navbar: show only LinkedIn + Instagram */
   .nav__socials .nav-social {
     display: none;
   }
-  .nav__socials .nav-social--twitter,
+  .nav__socials .nav-social--linkedin,
   .nav__socials .nav-social--instagram {
     display: flex;
+    font-size: 22px;
   }
 }
 
@@ -1981,14 +1994,7 @@ body::after {
   opacity: 0.4;
 }
 
-/* Smooth scroll overrides */
-html.has-scroll-smooth {
-  overflow: hidden;
-}
 
-html.has-scroll-smooth body {
-  overflow: hidden;
-}
 
 /* ═══════════════════════════════════════════════════════════════
    SKILLS SECTION (Interactive)
@@ -2040,8 +2046,29 @@ html.has-scroll-smooth body {
 
 .skills__grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-template-rows: repeat(5, auto);
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(190px, 220px);
   gap: 14px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding-bottom: 14px;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(77, 124, 255, 0.4) transparent;
+}
+
+.skills__grid::-webkit-scrollbar {
+  height: 6px;
+}
+
+.skills__grid::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.skills__grid::-webkit-scrollbar-thumb {
+  background: rgba(77, 124, 255, 0.4);
+  border-radius: 4px;
 }
 
 .skill-chip {
